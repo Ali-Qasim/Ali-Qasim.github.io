@@ -38,6 +38,7 @@ a{
 
 p, li, span, label, input, textarea{
     color: var(--secondaryText);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .s1{
