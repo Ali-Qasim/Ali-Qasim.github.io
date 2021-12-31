@@ -39,34 +39,13 @@ a{
 p, li, span, label, input, textarea{
     color: var(--secondaryText);
 }
-#navbar {
-    grid-area: navbar;
-    background-color: aquamarine;
-}
-#left-col {
-    grid-area: left-col;
-    background-color: rgb(167, 42, 42);
-    padding: 2em;
-}
-#right-col {
-    grid-area: right-col;
-    background-color: rgb(167, 42, 42);
-}
-#wrapper {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 4em 30em;
-    grid-template-areas:
-    "navbar navbar"
-    "left-col right-col";
-    gap: 10px;
-}
+
 .s1{
     background-color: var(--mainColor);
     border-bottom:1px solid var(--borderColour);
     overflow: auto;
 }
+
 .s2{
     background-color: var(--secondaryColour);
     border-bottom: 1px solid var(--borderColour);
@@ -76,6 +55,11 @@ p, li, span, label, input, textarea{
     width:1200px;
     margin: 0 auto;
 }
+
+.greeting-wrapper {
+    display: grid;
+}
+
 
 @media screen and (max-width: 1200px) {
     .main-container{
