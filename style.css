@@ -65,6 +65,12 @@ p, li, span, label, input, textarea{
     border: 2px dashed red;
 }
 
+.intro-wrapper {
+    background-color: var(--secondaryColour);
+    border: 1px solid var(--borderColour);
+    -webkit-box-shadow: 9px 8px 21px -4px rgba(0,0,0,0.69); 
+    box-shadow: 9px 8px 21px -4px rgba(0,0,0,0.69);
+}
 
 @media screen and (max-width: 1200px) {
     .main-container{
