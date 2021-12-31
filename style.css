@@ -58,6 +58,10 @@ p, li, span, label, input, textarea{
 
 .greeting-wrapper {
     display: grid;
+    text-align: center;
+    align-content: center;
+    min-height: 10em;
+    border: 2px dashed red;
 }
 
 
