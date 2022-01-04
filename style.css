@@ -116,6 +116,9 @@ div, p, li, span, label, input, textarea{
     width:1200px;
     margin: 0 auto;
 }
+.greeting-wrapper{
+    justify-content: center;
+}
 
 
 /*makes site mobile responsive*/
