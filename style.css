@@ -5,7 +5,9 @@
     --borderColour: red;
 
     --mainText: white;
-    --secondaryText:rgb(129, 91, 91);
+    --secondaryText:rgb(255, 0, 0);
+
+    --cursorSize: 20px
 }
 
 * {
@@ -24,13 +26,42 @@ h1, h2, h3, h4, h5, h6, strong {
     color: var(--mainText);
 }
 
-body {
-    background-color: var(--mainColor);
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover ~.trail {
+    transform: scale(1.4);
+    background-color: red;
+}
+
+div, p, li, span, label, input, textarea{
+    color: var(--secondaryText);
     font-family: "Poppins", sans-serif;
 }
 
-.site-logo{
-    font-size: 2em;
+body {
+    background-color: var(--mainColor);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 5em;
+    transition: background 250ms ease-in;
+    background: transparent;
+    color: var(--mainText);
+  }
+
+  .site-logo{
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 3em;
     color: var(--mainText);
     padding: auto;
 }
@@ -38,14 +69,15 @@ body {
 .nav-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 5em;
   display: flex;
-  align-items: baseline;}
+  align-items: baseline;
+}
 
 .nav-link {
     --spacing: 1em;
     text-decoration: none;
-    color: inherit;
+    color: var(--mainText);
     display: inline-block;
     padding: calc(var(--spacing) / 2) var(--spacing);
     position: relative;
@@ -54,23 +86,26 @@ body {
     font-size: 0.9rem;
   }
 
-header {
-    --text: #f4f4f4;
-    --text-inverse: #333;
-    --background: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2em 3em;
-    transition: background 250ms ease-in;
-    background: var(--background);
-    color: var(--mainText);
+  .nav__link:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: var(--spacing);
+    right: var(--spacing);
+    height: 2px;
+    background: currentColor;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    transition: -webkit-transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
   }
+
+  .nav__link:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+
 
   main {
     padding: 50vh 0;
@@ -91,16 +126,6 @@ em:active {
     color: rgb(255, 102, 102);
 }
 
-a{
-    text-decoration: none;
-    color: var(--mainText);
-}
-
-div, p, li, span, label, input, textarea{
-    color: var(--secondaryText);
-    font-family: Verdana, Geneva, Tahoma, sans-serif
-}
-
 .s1{
     background-color: var(--mainColor);
     border-bottom:1px solid var(--borderColour);
@@ -115,9 +140,6 @@ div, p, li, span, label, input, textarea{
 .main-container {
     width:1200px;
     margin: 0 auto;
-}
-.greeting-wrapper{
-    justify-content: center;
 }
 
 
