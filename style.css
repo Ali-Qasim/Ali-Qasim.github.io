@@ -54,9 +54,9 @@ header {
     transition: background 250ms ease-in;
     background: transparent;
     color: var(--secondaryColour);
-  }
+}
 
-  .site-logo{
+.site-logo{
     font-family: 'Reem Kufi', sans-serif;
     font-size: 3em;
     color: var(--secondaryColour);
@@ -141,7 +141,6 @@ shift {
     }
     20% {
         opacity: 1;
-        color: red;
         transform: translateY(-10%);
     }
     100% {
