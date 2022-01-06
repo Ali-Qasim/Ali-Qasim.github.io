@@ -1,13 +1,15 @@
 :root {
-    --mainColor: rgb(0, 2, 27);
+    --mainColor: rgb(14, 112, 129);
     --secondaryColour: white;
+    --highlight: red;
 
-    --borderColour: red;
+    /* colours
+    rgb(14, 112, 129);
+    white;
+    rgb(0, 2, 27)
+     */
 
-    --mainText: white;
-    --secondaryText:rgb(255, 0, 0);
-
-    --cursorSize: 20px
+    /* --borderColour: red; */
 }
 
 * {
@@ -16,14 +18,14 @@
 }
 
 h1{ font-size: 3em;}
-h2{ font-size: 36px;}
-h3{ font-size: 28px;}
-h4{ font-size: 24px;}
-h5{ font-size: 20px;}
-h6{ font-size: 16px;}
+h2{ font-size: 2.5em; line-height: 1.25em;}
+h3{ font-size: 2.5em;}
+h4{ font-size: 2em;}
+h5{ font-size: 2.5em;}
+h6{ font-size: 1em;}
 
 h1, h2, h3, h4, h5, h6, strong {
-    color: var(--mainText);
+    color: var(--secondaryColour);
 }
 
 a{
@@ -31,14 +33,9 @@ a{
     color: inherit;
 }
 
-a:hover ~.trail {
-    transform: scale(1.4);
-    background-color: red;
-}
-
 div, p, li, span, label, input, textarea{
-    color: var(--secondaryText);
     font-family: "Poppins", sans-serif;
+    color: var(--secondaryColour);
 }
 
 body {
@@ -53,22 +50,23 @@ header {
     z-index: 999;
     display: flex;
     justify-content: space-between;
-    padding: 0 2em;
+    padding: 2em 2em;
     transition: background 250ms ease-in;
     background: transparent;
-    color: var(--mainText);
+    color: var(--secondaryColour);
   }
 
   .site-logo{
     font-family: 'Reem Kufi', sans-serif;
     font-size: 3em;
-    color: var(--mainText);
+    color: var(--secondaryColour);
     padding: auto;
 }
 
 .nav-list {
   list-style: none;
   margin: 0;
+  padding: 0 5em;
   display: flex;
   align-items: baseline;
 }
@@ -76,41 +74,97 @@ header {
 .nav-link {
     --spacing: 1em;
     text-decoration: none;
-    color: var(--mainText);
+    color: var(--secondaryColour);
     display: inline-block;
     padding: calc(var(--spacing) / 2) var(--spacing);
     position: relative;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.9rem;
-  }
+ }
 
-  .nav__link:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: var(--spacing);
-    right: var(--spacing);
-    height: 2px;
-    background: currentColor;
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    transition: -webkit-transform 150ms ease-in-out;
-    transition: transform 150ms ease-in-out;
-    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
-  }
-
-  .nav__link:hover::after {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-  }
-
-
-  main {
-    padding: 50vh 0;
+main {
+    padding: 20vh 0;
 }
 
+.main-container{
+    display: flex;
+    justify-content:center;
+        
+}
+
+#banner{
+    width: 550px;
+    height: auto;
+    transition: all 0.5ms linear;
+    z-index: 100000;
+}
+
+.shadowed {
+    -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.2));
+    filter: url(#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    z-index: 100000;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: larger;
+}
+
+/* Text Shifter */
+shift {
+    position: absolute;
+    opacity: 0;
+    color: var(--secondaryColour);
+    font-size: 3em;
+    font-weight: 600;
+    margin-top: -20px;
+    left: 0px;
+}
+
+.visible {
+    position: relative;
+    opacity: 1;
+    animation: push-in 0.8s;
+  }
+  
+@keyframes push-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    20% {
+        opacity: 1;
+        color: red;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* END */
+
+
+.description {
+    margin-top: -60px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
 .greeting {
+    padding: 25% 0 0 0;
     text-align: center;
 }
 
@@ -120,22 +174,24 @@ em {
 }
 
 em:hover {
-    color: red;
+    color: var(--highlight);
     cursor: default;
 }
 em:active {
-    transition: color 20ms;
-    color: rgb(255, 102, 102);
+    transition: color 500ms;
+    color: var(--secondaryColour);
 }
 
 .s1{
     background-color: var(--mainColor);
+    color: var(--mainText);
     border-bottom:1px solid var(--borderColour);
     overflow: auto;
 }
 
 .s2{
     background-color: var(--secondaryColour);
+    color: var(--mainColor);
     border-bottom: 1px solid var(--borderColour);
     overflow: auto;
 }
