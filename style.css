@@ -1,7 +1,7 @@
 :root {
-    --mainColor: rgb(14, 112, 129);
+    --mainColor: #253f74;
     --secondaryColour: white;
-    --highlight: red;
+    --highlight: black;
 
     /* colours
     rgb(14, 112, 129);
@@ -17,7 +17,10 @@
     margin: 0;
 }
 
-h1{ font-size: 3em;}
+h1{ font-size: 3em;
+    font-weight: 100;
+    line-height: 1.25em;
+}
 h2{ font-size: 2.5em; line-height: 1.25em;}
 h3{ font-size: 2.5em;}
 h4{ font-size: 2em;}
@@ -50,23 +53,22 @@ header {
     z-index: 999;
     display: flex;
     justify-content: space-between;
-    padding: 2em 2em;
     transition: background 250ms ease-in;
     background: transparent;
     color: var(--secondaryColour);
-}
+  }
 
-.site-logo{
+  .site-logo{
     font-family: 'Reem Kufi', sans-serif;
     font-size: 3em;
     color: var(--secondaryColour);
-    padding: auto;
+    padding: 0 1em;
 }
 
 .nav-list {
   list-style: none;
   margin: 0;
-  padding: 0 5em;
+  padding: 2em 5em;
   display: flex;
   align-items: baseline;
 }
@@ -100,6 +102,11 @@ main {
     z-index: 100000;
 }
 
+img{
+    width: 100%;
+    height: auto;
+}
+
 .shadowed {
     -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.2));
     filter: url(#drop-shadow);
@@ -111,27 +118,36 @@ main {
 .intro {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
-.name {
-    font-size: larger;
+.greeting {
+    font-weight: 100;
+    line-height: 1.5em;
 }
 
+b {
+    font-weight: 600;
+}
 /* Text Shifter */
 shift {
     position: absolute;
     opacity: 0;
     color: var(--secondaryColour);
     font-size: 3em;
-    font-weight: 600;
-    margin-top: -20px;
-    left: 0px;
+    font-weight: 300;
+    margin-top: -30px;
+    line-height: 1em;
+    top: -50px;
+    pointer-events: none;
 }
 
 .visible {
+    pointer-events: all;
     position: relative;
     opacity: 1;
     animation: push-in 0.8s;
+    top:auto;
   }
   
 @keyframes push-in {
@@ -152,21 +168,6 @@ shift {
 /* END */
 
 
-.description {
-    margin-top: -60px;
-}
-
-img{
-    width: 100%;
-    height: auto;
-}
-
-
-.greeting {
-    padding: 25% 0 0 0;
-    text-align: center;
-}
-
 em {
     transition: color 1s;
     font-style: normal;
@@ -176,10 +177,11 @@ em:hover {
     color: var(--highlight);
     cursor: default;
 }
-em:active {
+
+/* em:active {
     transition: color 500ms;
     color: var(--secondaryColour);
-}
+} */
 
 .s1{
     background-color: var(--mainColor);

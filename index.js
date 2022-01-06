@@ -1,4 +1,4 @@
-const originalCursor = "z-index: 100000; width: 20px; height: 20px; border: 2px solid white;mix-blend-mode:difference; border-radius: 50%; position: absolute;transition: all 0.1s linear; pointer-events: none;"
+const originalCursor = "z-index: 100000; width: 10px; height: 10px; border: 2px solid white;mix-blend-mode:difference; border-radius: 50%; position: absolute;transition: all 0.1s linear; pointer-events: none;"
 
 var n = document.createElement("div");
     n.style.cssText = originalCursor;
@@ -9,20 +9,20 @@ document.addEventListener("mousemove", (e) => {
   n.style.top = (e.pageY - 11) + "px";
 });
 
-for (let e of document.getElementsByTagName("em")) {
-    e.onmouseover = function(){
-        n.style.border = "1px solid white"
-        n.style.cssText += "transform: scale(2);background: red;";
-    };
-    e.onmouseout = function(){
-        n.style.cssText = originalCursor;
-    };
-}
+// for (let e of document.getElementsByTagName("em")) {
+//     e.onmouseover = function(){
+//         n.style.border = "1px solid white"
+//         n.style.cssText += "transform: scale(3);background: red;border-color:red;";
+//     };
+//     e.onmouseout = function(){
+//         n.style.cssText = originalCursor;
+//     };
+// }
 
 for (let e of document.getElementsByTagName("a")) {
     e.onmouseover = function(){
         n.style.border = "1px solid white"
-        n.style.cssText += "transform: scale(2);background: white;";
+        n.style.cssText += "transform: scale(3);background: white;";
     };
     e.onmouseout = function(){
         n.style.cssText = originalCursor;
@@ -31,7 +31,7 @@ for (let e of document.getElementsByTagName("a")) {
 for (let e of document.getElementsByTagName("img")) {
     e.onmouseover = function(){
         n.style.border = "1px solid white"
-        n.style.cssText += "transform: scale(2);background: white;";
+        n.style.cssText += "transform: scale(4);background: white;";
     };
     e.onmouseout = function(){
         n.style.cssText = originalCursor;
