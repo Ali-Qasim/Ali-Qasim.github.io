@@ -136,7 +136,7 @@ shift {
     color: var(--secondaryColour);
     font-size: 3em;
     font-weight: 300;
-    margin-top: -30px;
+    margin-top: -28px;
     line-height: 1em;
     top: -50px;
     pointer-events: none;
