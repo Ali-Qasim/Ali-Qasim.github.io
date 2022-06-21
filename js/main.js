@@ -230,17 +230,7 @@ if(!(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elai
           n.style.left = (e.pageX - 5) + "px";
           n.style.top = (e.pageY - 5) + "px";
         });
-        
-        // for (let e of document.getElementsByTagName("em")) {
-        //     e.onmouseover = function(){
-        //         n.style.border = "1px solid white"
-        //         n.style.cssText += "transform: scale(3);background: red;border-color:red;";
-        //     };
-        //     e.onmouseout = function(){
-        //         n.style.cssText = originalCursor;
-        //     };
-        // }
-        
+       
         for (let e of document.getElementsByTagName("a")) {
             e.onmouseover = function(){
                 n.style.border = "1px solid white"
@@ -259,4 +249,13 @@ if(!(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elai
                 n.style.cssText = originalCursor;
             };
         }
+        for (let e of document.getElementsByTagName("img")) {
+                e.onmouseover = function(){
+                    n.style.border = "1px solid white"
+                    n.style.cssText += "transform: scale(6);background: white;";
+                };
+                e.onmouseout = function(){
+                    n.style.cssText = originalCursor;
+                };
+            }
 }
